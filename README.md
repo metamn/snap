@@ -1,2 +1,3 @@
-# snap
+# Snap
+
 Playing with Snap SVG
