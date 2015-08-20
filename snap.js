@@ -22,8 +22,8 @@ var snap = function(id, width, height) {
     'next'
   ];
 
-  // - the radius of the sense circle
-  var radius = 10;
+  // - the radius of the sense point
+  var radiusSensePoint = 10;
 
 
 
@@ -41,8 +41,8 @@ var snap = function(id, width, height) {
     class: 'diagonal'
   });
 
-  // Draw circles at the intersection of rulers with diagonal
-  var circles = [];
+  // Draw points at the intersection of rulers with diagonal
+  var sensePoints = [];
   for (var i = 0; i < points; i++ ) {
     var intersection = Snap.path.intersection(diagonal, rulers[i]);
     var x = intersection[0].x;
@@ -50,11 +50,11 @@ var snap = function(id, width, height) {
 
     // Move up the first circle
     if (i == points - 1) {
-      x = radius;
-      y -= radius / 2;
+      x = radiusSensePoint;
+      y -= radiusSensePoint / 2;
     }
-    
-    circles[i] = paper.circle(x, y, radius).attr({
+
+    sensePoints[i] = paper.circle(x, y, radiusSensePoint).attr({
       class: "sense--" + senses[points - i - 1]
     });
   }
