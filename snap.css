@@ -37,17 +37,30 @@ svg {
     display: flex;
   }
 
-  .svg--portrait {
+  .svg--portrait,
+  .svg--mobile {
     display: none;
   }
 }
 
 @media (orientation: portrait) {
-  .svg--landscape {
+  .svg--landscape,
+  .svg--mobile {
     display: none;
   }
 
   .svg--portrait {
+    display: flex;
+  }
+}
+
+@media (max-width: 767px) {
+  .svg--landscape,
+  .svg--portrait {
+    display: none;
+  }
+
+  .svg--mobile {
     display: flex;
   }
 }

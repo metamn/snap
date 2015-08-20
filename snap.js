@@ -140,5 +140,6 @@ var snap = function(id, width, height) {
 // Document.ready ....
 window.onload = function() {
   snap('.svg--landscape', 1366, 768);
-  //snap('.svg--portrait', 768, 1024);
+  snap('.svg--portrait', 768, 1024);
+  snap('.svg--mobile', 360, 640);
 };
