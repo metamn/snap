@@ -47,10 +47,9 @@ var snap = function(id, width, height) {
   for (var i = 1; i <= points; i++ ) {
     var y = (height / points) * i;
     rulers[i-1] = paper.path("M0," + y + "H" + width).attr({
-      class: "ruler-" + i
+      class: "ruler ruler-" + i
     });
   }
-
 
 
   // Draw the diagonal
@@ -99,6 +98,16 @@ var snap = function(id, width, height) {
       class: classCircle
     });
   }
+
+  // Draw the axes
+  var axisX = paper.path("M0," + (height - 1) + "H" + width).attr({
+    class: "axis axis--x"
+  });
+
+  var axisY = paper.path("M1,0V" + height).attr({
+    class: "axis axis--y"
+  });
+
 }
 
 // Document.ready ....

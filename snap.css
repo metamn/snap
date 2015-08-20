@@ -5,6 +5,16 @@ svg {
   fill: #f1f1f1;
 }
 
+
+.ruler {
+  stroke: #f9f9f9;
+  fill: #f1f1f1;
+}
+
+.axis {
+  stroke: #333;
+}
+
 .sense__circle {
   fill: transparent;
 }
