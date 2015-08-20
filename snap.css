@@ -19,7 +19,8 @@ svg {
   fill: transparent;
 }
 
-.sense__title {
+.sense__title,
+.axis__legend {
   stroke-width: 0; /* Otherwise it is blurry */
 
   font-family: Helvetica Neue,Helvetica,Arial,sans-serif;

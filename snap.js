@@ -40,6 +40,15 @@ var snap = function(id, width, height) {
   // - the radius of the sense point
   var radiusSensePoint = 10;
 
+  // - axis arrow size
+  var arrowSize = 10;
+
+  // - axis legend
+  var axisLegend = [
+    'Time',
+    'Senses'
+  ]
+
 
 
   // Draw the vertical rulers
@@ -99,15 +108,33 @@ var snap = function(id, width, height) {
     });
   }
 
+
+
   // Draw the axes
-  var axisX = paper.path("M0," + (height - 1) + "H" + width).attr({
-    class: "axis axis--x"
+
+  // - the arrow marker
+  var arrow = paper.path("M2,2 L2,11 L10,6 L2,2").attr({fill: '#000'});
+  var marker = arrow.marker(0, 0, arrowSize, arrowSize, 2, 6);
+
+  var axisX = paper.path("M" + (arrowSize / 2) + "," + (height - arrowSize / 2) + "H" + (width - arrowSize)).attr({
+    class: "axis axis--x",
+    markerEnd: marker
   });
 
-  var axisY = paper.path("M1,0V" + height).attr({
-    class: "axis axis--y"
+  var axisY = paper.path("M" + (arrowSize / 2) + "," + (height - arrowSize / 2) + "V" + arrowSize).attr({
+    class: "axis axis--y",
+    markerEnd: marker
   });
 
+  // - the legend
+  // Add text to sense points
+  axisLegendX = paper.text(width - 50, height - arrowSize - 10, axisLegend[1]).attr({
+    class: 'axis__legend axis__legend--x'
+  });
+
+  axisLegendY = paper.text(arrowSize + 10, arrowSize + 10, axisLegend[0]).attr({
+    class: 'axis__legend axis__legend--y'
+  });
 }
 
 // Document.ready ....
