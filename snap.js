@@ -45,7 +45,16 @@ var snap = function(id, width, height) {
   var circles = [];
   for (var i = 0; i < points; i++ ) {
     var intersection = Snap.path.intersection(diagonal, rulers[i]);
-    circles[i] = paper.circle(intersection[0].x, intersection[0].y, radius).attr({
+    var x = intersection[0].x;
+    var y = intersection[0].y
+
+    // Move up the first circle
+    if (i == points - 1) {
+      x = radius;
+      y -= radius / 2;
+    }
+    
+    circles[i] = paper.circle(x, y, radius).attr({
       class: "sense--" + senses[points - i - 1]
     });
   }
