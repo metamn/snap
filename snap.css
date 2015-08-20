@@ -5,6 +5,17 @@ svg {
   fill: #f1f1f1;
 }
 
+.sense__circle {
+  fill: transparent;
+}
+
+.sense__title {
+  stroke-width: 0; /* Otherwise it is blurry */
+
+  font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-size: 12px;
+  fill: black;
+}
 
 
 /* Breakpoints
