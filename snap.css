@@ -1,3 +1,41 @@
-html {
-  
+/* Colors
+*/
+svg {
+  stroke: #f1f1f1;
+  fill: #f1f1f1;
+}
+
+
+
+/* Breakpoints
+*/
+
+@media (orientation: landscape) {
+  .svg--landscape {
+    display: flex;
+  }
+
+  .svg--portrait {
+    display: none;
+  }
+}
+
+@media (orientation: portrait) {
+  .svg--landscape {
+    display: none;
+  }
+
+  .svg--portrait {
+    display: flex;
+  }
+}
+
+
+
+/* Responsive
+*/
+
+svg {
+  width: 100%;
+  height: 100%;
 }
